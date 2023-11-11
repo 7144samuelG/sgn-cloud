@@ -7,9 +7,7 @@ import React, { ElementRef, useEffect, useRef, useState } from "react";
 import { UserItem } from "./user-item";
 import { useMediaQuery } from "usehooks-ts";
 import { NavBar } from "./navbar";
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toggle";
-import { Popover } from "@radix-ui/react-popover";
+
 import Link from "next/link";
 import { SignOutButton } from "@clerk/nextjs";
 import { Item } from "./item";
