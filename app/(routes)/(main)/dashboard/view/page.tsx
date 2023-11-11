@@ -1,5 +1,5 @@
 "use client";
-import { storage } from "@/firebase";
+import { db, storage } from "@/firebase";
 import { deleteObject, getDownloadURL, listAll, ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
@@ -7,6 +7,7 @@ import { Delete, DeleteIcon, Download, DownloadCloud, Plus, Trash2 } from "lucid
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {useRouter} from "next/navigation"
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 const uuidv1 = require("uuid");
 
 const ViewDownloadFiles = () => {
@@ -34,7 +35,15 @@ const ViewDownloadFiles = () => {
    
   }, [userId]);
   
-const deleteItems=(dat:string)=>{
+const deleteItems=async(dat:string)=>{
+  const docRef=doc(db,"limits",`${userId}`);
+  const docsnap=await getDoc(docRef);
+  if(docsnap.exists()){
+    const limitdata=docsnap.data()!.limit;
+    await updateDoc(docRef,{
+      limit:limitdata-1
+    })
+  }
   const deleteRef=ref(storage,dat);
   deleteObject(deleteRef).then(()=>{
     toast.success("file deleted successfully")

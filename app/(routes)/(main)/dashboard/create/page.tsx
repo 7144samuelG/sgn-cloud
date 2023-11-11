@@ -30,7 +30,7 @@ const PublishNewFile = () => {
   const { userId } = useAuth();
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFile(e.target.files![0]);
-  };
+   };
   const uploadFiles = async (e: any) => {
     const docRef = doc(db, "users",`${userId}`);
     const docsnap = await getDoc(docRef);
