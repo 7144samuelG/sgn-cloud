@@ -1,0 +1,92 @@
+{/*<div className="flex justify-between items-center">
+        <div className="w-[1200px] mx-auto lg:flex items-center mt-[100px] space-x-10">
+       {clounds.map((item) => (
+         <div key={item.name} className="mx-4 my-3">
+          <Card className="w-[80%] mx-auto lg:w-[200px] h-[300px]">
+            <CardHeader>
+               <CardTitle className="text-center">{item.name}</CardTitle>
+               <CardDescription className="text-center h-[100px] w-[200px] mx-auto lg:w-full">
+                 {item.des}
+               </CardDescription>
+                 <CardContent>
+                   <div>
+                    <div className="flex items-center justify-center space-x-3">
+                      <del>{item.was}</del>
+                      <ins className="text-center no-underline bg-blue-400 rounded-[30px]">
+                        SAVE{item.save}
+                      </ins>
+                    </div>
+                   <CardDescription className="text-center">
+                     ${item.now}/mo
+                    </CardDescription>
+                  </div>
+                 <div className="flex justify-center">
+                   <Button className="text-center">Add to Cart</Button>
+                 </div>
+                 <CardDescription className="text-center">
+                   {item.renew}/mo when you renew
+                 </CardDescription>
+                </CardContent>
+              </CardHeader>
+          </Card>
+          </div>
+        ))}
+       </div>
+      </div>*/}
+         <div className="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2">
+      {clounds.map((item) => (
+        <div
+          key={item.name}
+          className="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl
+           ring-1 ring-gray-900/10 sm:p-10"
+        >
+          <div>
+            <h3 className="text-base font-semibold leading-7 text-indigo-600">
+              {item.name}
+            </h3>
+            <div className="mt-4 flex items-baseline gap-x-2">
+              {item.price ? (
+                <>
+                  <span className="text-3xl font-bold tracking-light text-gray-900">
+                    {item.price}
+                  </span>
+                  <span className="text-base font-semibold leading-7 text-gray-600">
+                    /month
+                  </span>
+                </>
+              ) : (
+                <span className="text-3xl font-bold tracking-tight text-gray-900">
+                  free
+                </span>
+              )}
+            </div>
+            <p className="mt-6 text-base leading-7 text-gray-600">{item.des}</p>
+            <ul
+              role="list"
+              className="mt-10 space-y-4 text-sm leading-6 text-gray-600"
+            >
+              {item.features.map((feat) => (
+                <li className="flex gap-x-3" key={feat}>
+                  <CheckIcon className="h-6 w-5 flex-none text-indigo-600 aria-hidden" />
+                  {feat}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            {item.id?(
+              <CheckOutButton/>
+            ):(
+              <Link href="/dashboard" className="
+              mt-8 block rounded-md bg-indigo-800 px-3.5 text-center text-sm
+               font-semibold leading-6 text-white
+              shadow-sm hover:bg-indigao-800 focus-visible:outline 
+              focus-visible-outline-2 focus-visible-outline-offset-2
+              focus-visible-outline-offset-2 focus-visible:outline-indigo-600
+               cursor-pointer disabled:opacity-80
+              ">Enter</Link>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
