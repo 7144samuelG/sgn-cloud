@@ -20,7 +20,7 @@ const FileShare = ({file}:{file:string}) => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button ><Share2 className="dark:text-white light:text-black"/></Button>
+          <p>share</p>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel>share</DropdownMenuLabel>
