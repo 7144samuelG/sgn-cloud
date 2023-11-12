@@ -25,15 +25,15 @@ const FileShare = ({file}:{file:string}) => {
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel>share</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuGroup>
+          <DropdownMenuGroup className="flex space-x-2">
             <DropdownMenuItem>
               <WhatsappShareButton url={file}>
-                <WhatsappIcon size={40} round={true} />
+                <WhatsappIcon size={20} round={true} />
               </WhatsappShareButton>
             </DropdownMenuItem>
             <DropdownMenuItem>
             <EmailShareButton url={file}>
-                <EmailIcon size={40} round={true} />
+                <EmailIcon size={20} round={true} />
               </EmailShareButton>
             </DropdownMenuItem>
           </DropdownMenuGroup>
