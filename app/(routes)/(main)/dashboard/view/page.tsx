@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import FileShare from "../_components/share";
 const ViewDownloadFiles = () => {
   const router = useRouter();
   const[copied,setCopied]=useState(false);
@@ -72,7 +73,7 @@ const ViewDownloadFiles = () => {
             <Trash2 />
             </Button>
             <Button onClick={()=>shareUrls(ite)}>
-            <Share />
+            <FileShare file={ite}/>
             </Button>
                         </div>
           </div>
