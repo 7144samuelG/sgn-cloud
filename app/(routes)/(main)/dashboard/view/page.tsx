@@ -64,7 +64,7 @@ const ViewDownloadFiles = () => {
               <p>image</p>
               
               <CopyToClipboard text={ite} onCopy={()=>setCopied(true)}>
-              <Button>
+              <Button onClick={()=>toast.success("copied")}>
                 copy
               </Button>
               </CopyToClipboard>
