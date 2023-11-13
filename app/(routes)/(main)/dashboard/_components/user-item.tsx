@@ -22,10 +22,10 @@ export const UserItem = () => {
   const { user } = useUser();
 
   return (
-    <DropdownMenu>
+    <DropdownMenu className="z-[999999]">
       <DropdownMenuTrigger asChild>
         <div role="button" className="flex items-center text-sm p-3 w-full hover:bg-primary/5">
-          <div className="gap-x-2 flex items-center max-w-[150px] z-[999999]">
+          <div className="gap-x-2 flex items-center max-w-[150px] z-[99999]">
             <Avatar className="h-5 w-5">
               <AvatarImage src={user?.imageUrl} />
             </Avatar>
@@ -42,7 +42,7 @@ export const UserItem = () => {
         alignOffset={11}
         forceMount
       >
-        <div className="flex flex-col space-y-4 p-2 z-[999999]">
+        <div className="flex flex-col space-y-4 p-2 z-[99999]">
           <p className="text-xs font-medium leading-none text-muted-foreground">
             {user?.emailAddresses[0].emailAddress}
           </p>
