@@ -36,7 +36,7 @@ const NavBar = () => {
             </SignInButton>
           </>
         )}
-        {isSignedIn && (
+        {!!isSignedIn &&(
           <>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/dashboard">Enter Sgncloud</Link>
