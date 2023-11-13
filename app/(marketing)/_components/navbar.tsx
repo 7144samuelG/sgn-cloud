@@ -7,10 +7,12 @@ import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Link } from "lucide-react";
 import { Spinner } from "@/components/spinner";
+import { useRouter } from "next/navigation";
 const NavBar = () => {
   const scrolled = useScrollTop();
   const {isSignedIn}=useSession();
   const {isLoaded } = useUser();
+  const router=useRouter()
   return (
     <>
       <div
@@ -36,14 +38,15 @@ const NavBar = () => {
             </SignInButton>
           </>
         )}
-        {!!isSignedIn &&(
-          <>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/dashboard">Enter Sgncloud</Link>
-            </Button>
-            <UserButton afterSignOutUrl="/" />
-          </>
-        )}
+         {isSignedIn && (
+        <>
+          <Button variant="ghost" size="sm" className="cursor-pointer" asChild  onClick={()=>router.push("/dashboard")}>
+            <h1>Enter Sgncloud</h1>
+            
+          </Button>
+          <UserButton/>
+        </>
+      )}
 
           <ModeToggle /> 
         </div>
