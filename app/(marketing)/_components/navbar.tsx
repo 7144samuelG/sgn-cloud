@@ -32,14 +32,14 @@ const NavBar = () => {
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button size="sm">Get Jotion free</Button>
+              <Button size="sm">Get SgnCloud free</Button>
             </SignInButton>
           </>
         )}
         {isSignedIn && (
           <>
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/dashboard">Enter Jotion</Link>
+              <Link href="/dashboard">Enter Sgncloud</Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>
