@@ -113,7 +113,7 @@ const Navigation = () => {
         >
           <ChevronsLeft className="h-6 w-6" />
         </div>
-        <div>
+        <div >
           <UserItem />
         </div>
         <div

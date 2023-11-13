@@ -40,7 +40,7 @@ const Heading = () => {
       {isSignedIn && (
         <>
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/dashboard">Enter Jotion</Link>
+            <Link href="/dashboard">Enter Sgncloud</Link>
           </Button>
         </>
       )}
