@@ -44,7 +44,7 @@ const MainDashboard = () => {
         className="hidden dark:block"
       />
       <h2 className="text-lg font-medium">
-        Welcome to samuel&apos;s Jotion
+        Welcome to sgn&apos;s cloud
       </h2>
       <Button onClick={()=>router.push("/dashboard/create")}>
         <PlusCircle className="h-4 w-4 mr-2" />
