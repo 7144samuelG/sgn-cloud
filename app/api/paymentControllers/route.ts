@@ -14,8 +14,8 @@ export async function POST(request:Request){
             }
         ],
         mode:"subscription",
-        success_url:"http://localhost:3000/dashboard?id=userId",
-        cancel_url:"http://localhost:3000"
+        success_url:"https://sgn-cloud.vercel.app/dashboard?id=userId",
+        cancel_url:"https://sgn-cloud.vercel.app"
     })
     return NextResponse.json(session.url)
 }

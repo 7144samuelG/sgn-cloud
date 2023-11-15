@@ -56,26 +56,27 @@ const ViewDownloadFiles = () => {
   }
   const shareUrls=async(urls:string)=>{}
   return (
-    <div className="mt-[50px]">
+    <div className="mt-[50px] overflow-x-hidden">
       {imageurls.length != 0 ? (
         imageurls?.map((ite) => (
           <div key={ite} className="px-2 border-t py-2">
             <div className="flex space-x-10">
-              <p className=" text-sm">{ite.slice(0, 100)}</p>
-              <p>image</p>
+              <p className=" text-sm  hidden lg:block">{ite.slice(0, 100)}</p>
+              <p className=" text-[8px] flex-1 lg:hidden">{ite.slice(0, 50)}</p>
               
               <CopyToClipboard text={ite} onCopy={()=>setCopied(true)}>
-              <Button onClick={()=>toast.success("copied")}>
+                
+              <Button onClick={()=>toast.success("copied")} className="">
                 copy
               </Button>
               </CopyToClipboard>
               <Button onClick={()=>deleteItems(ite)}>
-            <Trash2 />
+            <Trash2/>
             </Button>
             <Button onClick={()=>shareUrls(ite)}>
             <FileShare file={ite}/>
             </Button>
-                        </div>
+          </div>
           </div>
         ))
       ) : (
