@@ -14,7 +14,7 @@ export async function POST(request:Request){
             }
         ],
         mode:"subscription",
-        success_url:"https://sgn-cloud.vercel.app/dashboard?id=userId",
+        success_url:`https://sgn-cloud.vercel.app/dashboard?id=${userId}`,
         cancel_url:"https://sgn-cloud.vercel.app"
     })
     return NextResponse.json(session.url)
