@@ -56,7 +56,7 @@ const ViewDownloadFiles = () => {
         imageurls?.map((ite) => (
           <div key={ite} className="px-2 border-t py-2">
             <div className="flex items-center space-x-10">
-              <p className=" text-sm  hidden lg:block w-full lg:w-[60%">{ite.substring(43)}</p>
+              <p className=" text-sm w-full lg:w-[60%">{ite.substring(43)}</p>
               <div className="hidden lg:block">
                 <CopyToClipboard text={ite} onCopy={() => setCopied(true)}>
                   <Button
@@ -73,7 +73,7 @@ const ViewDownloadFiles = () => {
               >
                 <Trash2 />
               </Button>
-              <Button onClick={() => shareUrls(ite)}>
+              <Button onClick={() => shareUrls(ite)} className="hidden lg:block">
                 <FileShare file={ite} />
               </Button>
             </div>
