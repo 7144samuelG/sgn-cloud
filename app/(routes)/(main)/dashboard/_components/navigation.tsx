@@ -1,17 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-  ChevronsLeft,
-  CircleDollarSign,
-  Eye,
-  Home,
-  LogIn,
-  LogOut,
-  MenuIcon,
-  Plus,
-  Settings,
-} from "lucide-react";
+import { ChevronsLeft, CircleDollarSign, Eye, Home, LogIn, LogOut, MenuIcon, Plus, Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { ElementRef, useEffect, useRef, useState } from "react";
 import { UserItem } from "./user-item";
@@ -123,7 +113,7 @@ const Navigation = () => {
         >
           <ChevronsLeft className="h-6 w-6" />
         </div>
-        <div className="z-[1000000]">
+        <div className='z-[1000000]'>
           <UserItem />
         </div>
         <div
@@ -132,37 +122,29 @@ const Navigation = () => {
           className="opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0"
         />
         <Link href="/" className=" ml-2 py-2 px-1 space-x-2 flex items-center">
-          <Home className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground" />
+        <Home className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground"/>
           <p className="truncate text-sm mr-2 text-muted-foreground">Home</p>
         </Link>
-        <Link
-          href="/dashboard/create"
-          className="py-2 ml-2 px-1 space-x-2 flex items-center"
-        >
+        <Link href="/dashboard/create" className="py-2 ml-2 px-1 space-x-2 flex items-center">
           <Plus className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground" />
-          <p className="truncate text-sm mr-2 text-muted-foreground">
-            Create files
-          </p>
+          <p className="truncate text-sm mr-2 text-muted-foreground">Create files</p>
         </Link>
-        <Link
-          href="/dashboard/view"
-          className=" ml-2 py-2 px-1 space-x-2 flex items-center"
-        >
+        <Link href="/dashboard/view" className=" ml-2 py-2 px-1 space-x-2 flex items-center">
           <Eye className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground" />
-          <p className="truncate text-sm mr-2 text-muted-foreground">
-            View files
-          </p>
+          <p className="truncate text-sm mr-2 text-muted-foreground">View files</p>
         </Link>
-        <Link
-          href="/pricing"
-          className=" ml-2 py-2 px-1 space-x-2 flex items-center"
-        >
+        <Link href="/pricing" className=" ml-2 py-2 px-1 space-x-2 flex items-center">
           <CircleDollarSign className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground" />
           <p className="truncate text-sm mr-2 text-muted-foreground">Pricing</p>
         </Link>
         <div className="hidden md:block">
-          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
-        </div>
+        <Item
+            label="Settings"
+            icon={Settings}
+            onClick={settings.onOpen}
+          />
+          </div>
+         
       </aside>
 
       <div
@@ -173,7 +155,7 @@ const Navigation = () => {
           isMobile && "left-0 w-full"
         )}
       >
-        {/* <nav className="bg-transparent px-3 py-2 w-full">
+         <nav className="bg-transparent px-3 py-2 w-full">
           {isCollapsed && (
             <MenuIcon
               onClick={resetWidth}
@@ -181,7 +163,7 @@ const Navigation = () => {
               className="h-6 w-6 text-muted-foreground"
             />
           )}
-        </nav> */}
+        </nav> 
         <NavBar isCollapsed={isCollapsed} onResetWidth={resetWidth} />
       </div>
     </>

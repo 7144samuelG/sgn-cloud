@@ -23,7 +23,8 @@ const clounds = [
     des: "Every thing you need for your data storage",
     features: [
       "Fast, scalable, and durable cloud storage",
-      "Lower pricing and lower costs",
+      "zero costs and upgradable",
+      "limited storage",
       "Security-first architecture",
       "Advanced block storage",
       "High-performance block storage at any scale"
@@ -36,9 +37,9 @@ const clounds = [
     des: "Level up you data staorage and more enhanced safety and access",
     features: [
       "Fast, scalable, and durable cloud storage",
-      "Lower pricing and lower costs",
+      "unlimited storage",
       "Security-first architecture",
-      "Advanced block storage",
+      "additional features to protect your privacy",
       "High-performance block storage at any scale"
     ],
   }
