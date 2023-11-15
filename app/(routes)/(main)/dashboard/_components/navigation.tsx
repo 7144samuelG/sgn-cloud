@@ -85,7 +85,7 @@ const Navigation = () => {
     if (sidebarRef.current && navbarRef.current) {
       setIsCollapsed(true);
       setIsResetting(true);
-
+resetWidth()
       sidebarRef.current.style.width = "0";
       navbarRef.current.style.setProperty("width", "100%");
       navbarRef.current.style.setProperty("left", "0");
@@ -155,7 +155,7 @@ const Navigation = () => {
           isMobile && "left-0 w-full"
         )}
       >
-         <nav className="bg-transparent px-3 py-2 w-full">
+         {/* <nav className="bg-transparent px-3 py-2 w-full">
           {isCollapsed && (
             <MenuIcon
               onClick={resetWidth}
@@ -163,7 +163,7 @@ const Navigation = () => {
               className="h-6 w-6 text-muted-foreground"
             />
           )}
-        </nav> 
+        </nav>  */}
         <NavBar isCollapsed={isCollapsed} onResetWidth={resetWidth} />
       </div>
     </>
