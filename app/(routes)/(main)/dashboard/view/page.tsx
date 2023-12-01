@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import FileShare from "../_components/share";
+import prettyBytes from 'pretty-bytes';
+import Link from "next/link";
 const ViewDownloadFiles = () => {
   const router = useRouter();
   const [copied, setCopied] = useState(false);
@@ -50,6 +52,15 @@ const ViewDownloadFiles = () => {
     toast.success("copied");
   };
   const shareUrls = async (urls: string) => {};
+  const handleDownload = (ite:string) => {
+    if (ite) {
+      // Create an anchor element to trigger download
+      const link = document.createElement('a');
+      link.href = ite;
+      link.download = 'your-file-name.txt';
+      link.click();
+    }
+  };
   return (
     <div className="mt-[50px] overflow-x-hidden">
       {imageurls.length != 0 ? (
@@ -66,6 +77,9 @@ const ViewDownloadFiles = () => {
                     copy
                   </Button>
                 </CopyToClipboard>
+              </div>
+              <div>
+                <Button onClick={()=>handleDownload(ite)}>download</Button>
               </div>
               <Button
                 onClick={() => deleteItems(ite)}
