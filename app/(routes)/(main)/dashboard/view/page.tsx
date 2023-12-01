@@ -57,7 +57,7 @@ const ViewDownloadFiles = () => {
       // Create an anchor element to trigger download
       const link = document.createElement('a');
       link.href = ite;
-      link.download = 'your-file-name.txt';
+      link.download = ite;
       link.click();
     }
   };
