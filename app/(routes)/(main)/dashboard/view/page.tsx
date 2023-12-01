@@ -62,17 +62,17 @@ const ViewDownloadFiles = () => {
     }
   };
   return (
-    <div className="mt-[50px] overflow-x-hidden">
+    <div className="mt-[50px] overflow-x-scroll">
       {imageurls.length != 0 ? (
         imageurls?.map((ite) => (
           <div key={ite} className="px-2 border-t py-2">
             <div className="flex items-center space-x-10">
               <p className=" text-sm w-full lg:w-[60%">{ite.substring(43)}</p>
-              <div className="hidden lg:block">
+              <div className="">
                 <CopyToClipboard text={ite} onCopy={() => setCopied(true)}>
                   <Button
                     onClick={() => toast.success("copied")}
-                    className="hidden lg:block"
+                    className=""
                   >
                     copy
                   </Button>
@@ -83,11 +83,11 @@ const ViewDownloadFiles = () => {
               </div>
               <Button
                 onClick={() => deleteItems(ite)}
-                className="hidden lg:block"
+                className=""
               >
                 <Trash2 />
               </Button>
-              <Button onClick={() => shareUrls(ite)} className="hidden lg:block">
+              <Button onClick={() => shareUrls(ite)} className="">
                 <FileShare file={ite} />
               </Button>
             </div>
