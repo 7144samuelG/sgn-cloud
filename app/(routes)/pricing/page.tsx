@@ -60,7 +60,8 @@ const Pricing = () => {
 
   console.log(prices);
   return (
-    <div className=" mx-3 md:mx-auto mt-[100px] grid max-w-md grid-cols-1 mb-3 gap-8 lg:max-w-4xl lg:grid-cols-2">
+    <div
+     className=" mx-3 md:mx-auto mt-[100px] grid max-w-md grid-cols-1 mb-3 gap-8 lg:max-w-4xl lg:grid-cols-2">
       {clounds.map((item) => (
         <div
           key={item.id}
