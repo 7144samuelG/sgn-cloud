@@ -67,7 +67,8 @@ const ViewDownloadFiles = () => {
         imageurls?.map((ite) => (
           <div key={ite} className="px-2 border-t py-2">
             <div className="flex items-center space-x-10">
-              <p className=" text-sm w-full lg:w-[60%]">{ite.substring(43)}</p>
+              <p className=" hidden lg:block text-sm w-full lg:w-[60%]">{ite.substring(43)}</p>
+              <p className="lg:hidden text-[10px] w-full lg:w-[40%]">{ite.substring(43)}</p>
               <div className="">
                 <CopyToClipboard text={ite} onCopy={() => setCopied(true)}>
                   <Button
