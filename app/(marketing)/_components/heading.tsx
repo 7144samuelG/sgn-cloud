@@ -20,8 +20,9 @@ const Heading = () => {
         <span className="underline">Sgncloud</span>
       </h1>
       <h3 className="text-base sm:text-xl md:text-2xl font-medium">
-        Sgncloud is the connected workspace where <br />
-        better, faster work happens.
+        Get powerful and secure cloud storage with SgnCloud.
+         Access your files from multiple devices, whether you&#39re at work,
+         at home, or on the road
       </h3>
        {!isLoaded && (
         <div className="w-full flex items-center justify-center">
