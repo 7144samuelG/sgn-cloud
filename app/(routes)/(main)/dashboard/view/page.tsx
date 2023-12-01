@@ -80,7 +80,7 @@ const ViewDownloadFiles = () => {
                 </CopyToClipboard>
               </div>
               <div>
-                <a href={ite} target="_blank" className="underline-none text-white">download</a>
+                <a href={ite} target="_blank" className="underline-none text-black dark:text-white">download</a>
               </div>
               <Button
                 onClick={() => deleteItems(ite)}
