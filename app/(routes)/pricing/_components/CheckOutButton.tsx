@@ -26,6 +26,7 @@ const CheckOutButton = () => {
     const CheckOutSession=async()=>{
         if(paid){
             router.push("https://sgn-cloud.vercel.app/dashboard")
+            return;
         }
         const{data}=await axios.post("/api/paymentControllers",{
             priceId:"price_1O93t9KkDPUMN62jBXslaIdB"
