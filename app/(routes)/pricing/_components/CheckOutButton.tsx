@@ -3,13 +3,30 @@ import { Button } from "@/components/ui/button";
 import { db } from "@/firebase";
 import { useAuth } from "@clerk/nextjs";
 import axios from "axios";
-import { addDoc, collection } from "firebase/firestore";
-import React,{ useState } from "react";
+import { addDoc, collection, doc, getDoc } from "firebase/firestore";
+import { useRouter } from "next/navigation";
+import React,{ useState,useEffect } from "react";
 
 const CheckOutButton = () => {
     const [loading,setLoading]=useState(true)
+    const[paid,setPaid]=useState(false)
     const{userId}=useAuth()
+   const router=useRouter()
+    useEffect(()=>{
+        const getData=async()=>{
+            const docRef = doc(db, "users",`${userId}`);
+            const docsnap = await getDoc(docRef);
+            if(docsnap.exists()){
+                setPaid(true)
+            }
+        }
+        getData()
+    },[userId])
+    
     const CheckOutSession=async()=>{
+        if(paid){
+            router.push("https://sgn-cloud.vercel.app/dashboard")
+        }
         const{data}=await axios.post("/api/paymentControllers",{
             priceId:"price_1O93t9KkDPUMN62jBXslaIdB"
         },{
@@ -36,7 +53,7 @@ const CheckOutButton = () => {
               focus-visible-outline-offset-2 focus-visible:outline-indigo-600
                cursor-pointer disabled:opacity-80
               ">
-            Subscribe
+            {paid?"Already Subscribed":"subscribe"}
         </Button>
         </>
      );
